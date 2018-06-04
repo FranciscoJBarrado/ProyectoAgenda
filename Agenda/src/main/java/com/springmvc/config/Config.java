@@ -37,4 +37,3 @@ public class Config extends WebMvcConfigurerAdapter {
 	}
  
 }
-
