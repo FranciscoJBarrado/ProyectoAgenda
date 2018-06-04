@@ -1,5 +1,9 @@
 package com.springmvc.config;
 
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
 import com.springmvc.model.Empleados;
 
 import java.util.Properties;
@@ -16,12 +20,42 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.springmvc.model.Empleados;
+
 
 
 @Configuration
 @ComponentScan("com.springmvc")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
+    @Bean(name = "viewResolver")
+    public InternalResourceViewResolver getViewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+    
+
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	    registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+		///registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");	    
+	}
+     
+    
+    @Bean(name = "dataSource")
+    public DataSource getDataSource() {
+    	BasicDataSource dataSource = new BasicDataSource();
+    	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+    	dataSource.setUrl("jdbc:mysql://10.90.36.16/agenda");
+    	dataSource.setUsername("admin");
+    	dataSource.setPassword("1111");
+    	
+    	return dataSource;
+    }
+    
+    
+    private Properties getHibernateProperties() {
 	
 	@Bean(name="viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
@@ -53,6 +87,8 @@ public class ApplicationContextConfig {
     	return properties;
     }
     
+    //copiar para el acceso a datos
+
     @Autowired
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory(DataSource dataSource) {
