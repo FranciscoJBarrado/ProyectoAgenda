@@ -16,7 +16,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.springmvc.model.Categorias;
+import com.springmvc.model.Departamentos;
+import com.springmvc.model.Direcciones;
 import com.springmvc.model.Empleados;
+import com.springmvc.model.Personas;
+import com.springmvc.model.Telefonos;
 
 
 @Configuration
@@ -64,6 +69,11 @@ public class ApplicationContextConfig {
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addAnnotatedClasses(Empleados.class);
+    	sessionBuilder.addAnnotatedClasses(Categorias.class);
+    	sessionBuilder.addAnnotatedClasses(Departamentos.class);
+    	sessionBuilder.addAnnotatedClasses(Direcciones.class);
+    	sessionBuilder.addAnnotatedClasses(Personas.class);
+    	sessionBuilder.addAnnotatedClasses(Telefonos.class);
     	return sessionBuilder.buildSessionFactory();
     }
     
