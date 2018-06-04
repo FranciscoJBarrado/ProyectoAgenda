@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <%@ page isELIgnored="false" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@
                         </div><!-- .site-title -->
                     </div><!-- .site-branding -->
                 </div><!-- .col -->
-
+				<h1>Bienvenido a su agenda telefónica</h1>
                 <div class="col-2 col-lg-7 order-3 order-lg-2">
                     <nav class="site-navigation">
                         <div class="hamburger-menu d-lg-none">
@@ -700,4 +699,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type='text/javascript' src='js/custom.js'></script>
 
 </body>
+
 </html>
