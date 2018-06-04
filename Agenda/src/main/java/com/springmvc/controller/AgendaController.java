@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
-
-	public class AgendaController {
-
-		@RequestMapping(method = RequestMethod.GET)
+public class AgendaController {
+	
+		@RequestMapping("/")
 		public ModelAndView ListaEmpleados() {
 			//List<Empleado> listaEmpleados = serviciosBuscarEMpleados();
 			ModelAndView model = new ModelAndView("listaEmpleados")
@@ -21,4 +19,4 @@ import org.springframework.web.servlet.ModelAndView;
 			return model;
 		}
 
-	}
+}
