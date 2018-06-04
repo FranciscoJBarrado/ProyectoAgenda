@@ -4,6 +4,10 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.springmvc.model.Empleados;
+
+import java.util.Properties;
+import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.springmvc.model.Empleados;
+
 
 
 @Configuration
@@ -51,6 +56,31 @@ public class ApplicationContextConfig {
     
     
     private Properties getHibernateProperties() {
+	
+	@Bean(name="viewResolver")
+	public InternalResourceViewResolver getViewResolver() {
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.setPrefix("/WEB-INF/views/");
+		viewResolver.setSuffix(".jsp");
+		return viewResolver;
+	}
+	
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	    registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+	}
+	
+	@Bean(name = "dataSource")
+    public DataSource getDataSource() {
+    	BasicDataSource dataSource = new BasicDataSource();
+    	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+    	dataSource.setUrl("jdbc:mysql://localhost:3306/usersdb");
+    	dataSource.setUsername("root");
+    	dataSource.setPassword("root");
+    	
+    	return dataSource;
+    }
+	
+	private Properties getHibernateProperties() {
     	Properties properties = new Properties();
     	properties.put("hibernate.show_sql", "true");
     	properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
@@ -58,6 +88,7 @@ public class ApplicationContextConfig {
     }
     
     //copiar para el acceso a datos
+
     @Autowired
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory(DataSource dataSource) {
@@ -76,4 +107,5 @@ public class ApplicationContextConfig {
 
 		return transactionManager;
 	}
+
 }
