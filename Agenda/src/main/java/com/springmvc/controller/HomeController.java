@@ -26,8 +26,10 @@ public class HomeController {
 	/*@Autowired
 	private UserService userService;
 */
-	@RequestMapping("/kk")
+	@RequestMapping("/")
 	public ModelAndView handleRequest()throws Exception {
+		
+		System.out.println("-- dentro de controller");
 		
 		
 		/*DE MOMENTO NO SE PUEDE HACER
