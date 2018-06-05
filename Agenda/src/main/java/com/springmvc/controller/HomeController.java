@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springmvc.model.Empleados;
-import com.springmvc.services.UserService;
+import com.springmvc.model.Personas;
+import com.springmvc.services.PersonasService;
 
 
 
@@ -23,9 +24,9 @@ import com.springmvc.services.UserService;
 @Controller
 public class HomeController {
 	
-	/*@Autowired
-	private UserService userService;
-*/
+	@Autowired
+	private PersonasService personasService;
+
 	@RequestMapping("/")
 	public ModelAndView handleRequest()throws Exception {
 		
@@ -34,10 +35,12 @@ public class HomeController {
 		
 		/*DE MOMENTO NO SE PUEDE HACER
 		 * 
-		 * List<Empleados> listEmpleados = userService.list();
-		ModelAndView model = new ModelAndView("UserList");
-		model.addObject("userList", listEmpleados);*/
+		 * 
+		
+		*/
+		List<Personas> listPersonas = personasService.list();
 		ModelAndView model = new ModelAndView("indexx");
+		model.addObject("userList", listPersonas);
 		model.addObject("hola","Q pasa tio");		
 		return model;
 	}
