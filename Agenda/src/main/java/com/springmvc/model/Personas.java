@@ -1,5 +1,5 @@
 package com.springmvc.model;
-// Generated 05-jun-2018 16:29:52 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 16:58:15 by Hibernate Tools 5.2.3.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -24,25 +24,25 @@ public class Personas implements java.io.Serializable {
 	private String apellido2;
 	private String dni;
 	private Date fechaNacimiento;
-	private int empleadosIdempleados;
+	private int idEmpleado;
 
 	public Personas() {
 	}
 
-	public Personas(String nombre, String apellido1, int empleadosIdempleados) {
+	public Personas(String nombre, String apellido1, int idEmpleado) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
-		this.empleadosIdempleados = empleadosIdempleados;
+		this.idEmpleado = idEmpleado;
 	}
 
 	public Personas(String nombre, String apellido1, String apellido2, String dni, Date fechaNacimiento,
-			int empleadosIdempleados) {
+			int idEmpleado) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.dni = dni;
 		this.fechaNacimiento = fechaNacimiento;
-		this.empleadosIdempleados = empleadosIdempleados;
+		this.idEmpleado = idEmpleado;
 	}
 
 	@Id
@@ -103,13 +103,13 @@ public class Personas implements java.io.Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	@Column(name = "empleados_idempleados", nullable = false)
-	public int getEmpleadosIdempleados() {
-		return this.empleadosIdempleados;
+	@Column(name = "idEmpleado", nullable = false)
+	public int getIdEmpleado() {
+		return this.idEmpleado;
 	}
 
-	public void setEmpleadosIdempleados(int empleadosIdempleados) {
-		this.empleadosIdempleados = empleadosIdempleados;
+	public void setIdEmpleado(int idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 
 }
