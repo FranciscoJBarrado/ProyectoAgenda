@@ -11,6 +11,6 @@
 </head>
 <body>
 <h1>HOLA MACHOTE</h1>
-<h2>${empleado.salario}</h2>
+<h2>${hola}</h2>
 </body>
 </html>

@@ -36,10 +36,7 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("UserList");
 		model.addObject("userList", listEmpleados);*/
 		ModelAndView model = new ModelAndView("index");
-		Empleados emple = new Empleados();
-		emple.setSalario("1000");
-		model.addObject("empleado", emple);
-		
+		model.addObject("hola","Q pasa tio");		
 		return model;
 	}
 	/*
