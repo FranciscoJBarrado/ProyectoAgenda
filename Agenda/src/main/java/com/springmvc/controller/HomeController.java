@@ -23,17 +23,26 @@ import com.springmvc.services.UserService;
 @Controller
 public class HomeController {
 	
-	@Autowired
+	/*@Autowired
 	private UserService userService;
-
+*/
 	@RequestMapping("/")
-	public ModelAndView handleRequest() throws Exception {
-		List<Empleados> listEmpleados = userService.list();
+	public ModelAndView handleRequest()throws Exception {
+		
+		
+		/*DE MOMENTO NO SE PUEDE HACER
+		 * 
+		 * List<Empleados> listEmpleados = userService.list();
 		ModelAndView model = new ModelAndView("UserList");
-		model.addObject("userList", listEmpleados);
+		model.addObject("userList", listEmpleados);*/
+		ModelAndView model = new ModelAndView("index");
+		Empleados emple = new Empleados();
+		emple.setSalario("1000");
+		model.addObject("empleado", emple);
+		
 		return model;
 	}
-	
+	/*
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
 		ModelAndView model = new ModelAndView("UserForm");
@@ -62,5 +71,5 @@ public class HomeController {
 		userService.saveOrUpdate(empleado);
 		return new ModelAndView("redirect:/");
 	}
-	
+	*/
 }
