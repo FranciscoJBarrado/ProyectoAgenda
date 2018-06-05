@@ -12,5 +12,28 @@
 <body>
 <h1>HOLA MACHOTE</h1>
 <h2>${hola}</h2>
+<table border="1">
+<tr>
+			<th>Nº</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Apellido</th>
+			<th>DNI</th>
+		
+			</tr>
+	<c:forEach var="user" items="${userList}" varStatus="status">
+				<tr>
+					<td>${status.index + 1}</td>
+					<td>${user.nombre}</td>
+					<td>${user.apellido1}</td>
+					<td>${user.apellido2}</td>
+					<td>${user.dni}</td>
+				
+					
+					
+					</td>
+				</tr>
+			</c:forEach>
+			</table>
 </body>
 </html>
