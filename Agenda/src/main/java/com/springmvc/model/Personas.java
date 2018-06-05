@@ -1,20 +1,12 @@
 package com.springmvc.model;
-
-
-// Generated 04-jun-2018 14:51:39 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 16:29:52 by Hibernate Tools 5.2.3.Final
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,33 +19,30 @@ import javax.persistence.TemporalType;
 public class Personas implements java.io.Serializable {
 
 	private Integer idpersonas;
-	private Empleados empleados;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String dni;
 	private Date fechaNacimiento;
-	private Set<Direcciones> direccioneses = new HashSet<Direcciones>(0);
-	private Set<Telefonos> telefonoses = new HashSet<Telefonos>(0);
+	private int empleadosIdempleados;
 
 	public Personas() {
 	}
 
-	public Personas(String nombre, String apellido1) {
+	public Personas(String nombre, String apellido1, int empleadosIdempleados) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
+		this.empleadosIdempleados = empleadosIdempleados;
 	}
 
-	public Personas(Empleados empleados, String nombre, String apellido1, String apellido2, String dni,
-			Date fechaNacimiento, Set<Direcciones> direccioneses, Set<Telefonos> telefonoses) {
-		this.empleados = empleados;
+	public Personas(String nombre, String apellido1, String apellido2, String dni, Date fechaNacimiento,
+			int empleadosIdempleados) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.dni = dni;
 		this.fechaNacimiento = fechaNacimiento;
-		this.direccioneses = direccioneses;
-		this.telefonoses = telefonoses;
+		this.empleadosIdempleados = empleadosIdempleados;
 	}
 
 	@Id
@@ -66,16 +55,6 @@ public class Personas implements java.io.Serializable {
 
 	public void setIdpersonas(Integer idpersonas) {
 		this.idpersonas = idpersonas;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idEmpleado")
-	public Empleados getEmpleados() {
-		return this.empleados;
-	}
-
-	public void setEmpleados(Empleados empleados) {
-		this.empleados = empleados;
 	}
 
 	@Column(name = "nombre", nullable = false, length = 45)
@@ -124,22 +103,13 @@ public class Personas implements java.io.Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "personas")
-	public Set<Direcciones> getDireccioneses() {
-		return this.direccioneses;
+	@Column(name = "empleados_idempleados", nullable = false)
+	public int getEmpleadosIdempleados() {
+		return this.empleadosIdempleados;
 	}
 
-	public void setDireccioneses(Set<Direcciones> direccioneses) {
-		this.direccioneses = direccioneses;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "personas")
-	public Set<Telefonos> getTelefonoses() {
-		return this.telefonoses;
-	}
-
-	public void setTelefonoses(Set<Telefonos> telefonoses) {
-		this.telefonoses = telefonoses;
+	public void setEmpleadosIdempleados(int empleadosIdempleados) {
+		this.empleadosIdempleados = empleadosIdempleados;
 	}
 
 }

@@ -1,17 +1,11 @@
 package com.springmvc.model;
+// Generated 05-jun-2018 16:29:52 by Hibernate Tools 5.2.3.Final
 
-
-// Generated 04-jun-2018 14:51:39 by Hibernate Tools 5.2.3.Final
-
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,7 +18,6 @@ public class Categorias implements java.io.Serializable {
 	private Integer idcategorias;
 	private String nombre;
 	private String descripcion;
-	private Set<Empleados> empleadoses = new HashSet<Empleados>(0);
 
 	public Categorias() {
 	}
@@ -33,10 +26,9 @@ public class Categorias implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	public Categorias(String nombre, String descripcion, Set<Empleados> empleadoses) {
+	public Categorias(String nombre, String descripcion) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		this.empleadoses = empleadoses;
 	}
 
 	@Id
@@ -67,15 +59,6 @@ public class Categorias implements java.io.Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categorias")
-	public Set<Empleados> getEmpleadoses() {
-		return this.empleadoses;
-	}
-
-	public void setEmpleadoses(Set<Empleados> empleadoses) {
-		this.empleadoses = empleadoses;
 	}
 
 }
