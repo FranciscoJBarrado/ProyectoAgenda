@@ -26,7 +26,7 @@ public class HomeController {
 	/*@Autowired
 	private UserService userService;
 */
-	@RequestMapping("/")
+	@RequestMapping("/kk")
 	public ModelAndView handleRequest()throws Exception {
 		
 		
@@ -35,7 +35,7 @@ public class HomeController {
 		 * List<Empleados> listEmpleados = userService.list();
 		ModelAndView model = new ModelAndView("UserList");
 		model.addObject("userList", listEmpleados);*/
-		ModelAndView model = new ModelAndView("index");
+		ModelAndView model = new ModelAndView("indexx");
 		model.addObject("hola","Q pasa tio");		
 		return model;
 	}
