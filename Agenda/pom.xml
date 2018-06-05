@@ -46,7 +46,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${org.hibernate-version}</version>
 		</dependency>
-				
+					
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
