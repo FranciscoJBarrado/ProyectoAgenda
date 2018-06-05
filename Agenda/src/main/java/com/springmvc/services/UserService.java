@@ -9,6 +9,7 @@ import com.springmvc.model.Empleados;
 
 
 public interface UserService {
+	
 	public List<Empleados> list();
 	
 	public Empleados get(int id);

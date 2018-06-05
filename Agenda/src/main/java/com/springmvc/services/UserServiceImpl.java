@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springmvc.dao.UserDAO;
+import com.springmvc.dao.PersonasDAO;
 import com.springmvc.model.Empleados;
 
 
@@ -17,26 +17,26 @@ import com.springmvc.model.Empleados;
 @Service
 @Transactional
 public class UserServiceImpl /*implements UserService*/ {
-/*
+
 	@Autowired
-	private UserDAO userDAO;
-	*/
+	private PersonasDAO personasDAO;
+	
 	/*
-	public UserServiceImpl(){
+	public EmpleadosServiceImpl(){
 		
 	}
 	
-	public UserServiceImpl(UserDAO userDAO) {
+	public EmpleadosServiceImpl(EmpleadosDAO empleadosDAO) {
 		super();
 		this.userDAO = userDAO;
 	}
 	*/
-/*
+
 
 	@Override
 	public List<Empleados> list() {
 
-		return userDAO.list();
+		return PersonasDAO.list();
 	}
 
 	@Override
@@ -55,5 +55,5 @@ public class UserServiceImpl /*implements UserService*/ {
 		userDAO.delete(id);
 
 	}
-*/
+
 }
