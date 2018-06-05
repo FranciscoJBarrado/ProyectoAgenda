@@ -16,11 +16,11 @@ import com.springmvc.model.Empleados;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
-
+public class UserServiceImpl /*implements UserService*/ {
+/*
 	@Autowired
 	private UserDAO userDAO;
-	
+	*/
 	/*
 	public UserServiceImpl(){
 		
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 		this.userDAO = userDAO;
 	}
 	*/
-
+/*
 
 	@Override
 	public List<Empleados> list() {
@@ -55,5 +55,5 @@ public class UserServiceImpl implements UserService {
 		userDAO.delete(id);
 
 	}
-
+*/
 }

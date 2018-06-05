@@ -1,5 +1,6 @@
 package com.springmvc.dao;
 
+<<<<<<< HEAD
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -28,5 +29,15 @@ public class UserDAOImpl {
 		
 		return null;
 	}*/
+=======
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+>>>>>>> master
 
+@Repository
+public class UserDAOImpl  {
+
+	@Autowired
+	private SessionFactory sessionFactory;
 }
