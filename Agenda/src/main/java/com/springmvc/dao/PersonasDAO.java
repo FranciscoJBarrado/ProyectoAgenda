@@ -14,4 +14,6 @@ public interface PersonasDAO {
 
 	void delete(int id);
 
+	int sumados();
+
 }
