@@ -11,6 +11,13 @@
 </head>
 <body>
 <h1>HOLA MACHOTE</h1>
-<h2>${hola}</h2>
+
+<c:forEach var="user" items="${userList}" varStatus="status">
+				<tr>
+					<td>${status.index + 1}</td>
+					<td>${user.nombre}</td>					
+					</td>
+				</tr>
+			</c:forEach>
 </body>
 </html>

@@ -41,7 +41,7 @@ public class HomeController {
 		List<Personas> listPersonas = personasService.list();
 		ModelAndView model = new ModelAndView("indexx");
 		model.addObject("userList", listPersonas);
-		model.addObject("hola","Q pasa tio");		
+		model.addObject("hola",listPersonas);		
 		return model;
 	}
 	/*
