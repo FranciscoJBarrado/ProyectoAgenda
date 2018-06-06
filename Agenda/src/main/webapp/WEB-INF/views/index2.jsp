@@ -51,19 +51,7 @@
 	
 		<!-- /.container-fluid -->
 		<div class="main app form" id="main">
-			<!-- Main Section-->
-			<div class="hero-section">
-				<div class="container nopadding">
-					<div class="col-md-6 col-md-offset-3 features-left">
-						<img class="img-responsive wow fadeInUp" data-wow-delay="0.1s"
-							src="/static/images/app-signup.png"
-							alt="App"
-							style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-					</div>
 
-
-				</div>
-			</div>
 
 			<!-- Client Section -->
 			<div class="client-section">
