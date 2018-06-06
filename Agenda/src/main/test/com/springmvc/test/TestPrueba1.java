@@ -29,4 +29,9 @@ public class TestPrueba1
 	public void testPrueba(){		
 		assertEquals(2,personasDAO.sumados());		
 	}
+	@Test
+	public void testPruebaDos()
+	{
+		assertNull(personasDAO.get(4));
+	}
 }
