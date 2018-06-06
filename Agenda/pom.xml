@@ -11,6 +11,9 @@
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.3.8.RELEASE</org.springframework-version>
 		<org.hibernate-version>4.3.11.Final</org.hibernate-version>
+			<log4jframework.version>2.5</log4jframework.version>
+		<junit.version>4.12</junit.version>
+		<slf4j.version>1.7.19</slf4j.version>
 	</properties>
 
 <dependencies>
@@ -79,6 +82,35 @@
     		<artifactId>mysql-connector-java</artifactId>
     		<version>5.1.30</version>		
 		</dependency> 
+		<!-- Loggin with Log4j2 - Spring integration with SL4J Facade -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4jframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jcl</artifactId>
+			<version>${log4jframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${log4jframework.version}</version>
+		</dependency>
+		<!-- Testing -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
  <build>
         <plugins>
