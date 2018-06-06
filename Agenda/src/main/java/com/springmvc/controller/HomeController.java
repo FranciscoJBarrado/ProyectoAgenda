@@ -1,6 +1,7 @@
 package com.springmvc.controller;
 
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springmvc.model.Empleados;
-import com.springmvc.services.UserService;
+import com.springmvc.model.Personas;
+import com.springmvc.services.PersonasService;
 
 
 
@@ -24,16 +26,34 @@ import com.springmvc.services.UserService;
 public class HomeController {
 	
 	@Autowired
-	private UserService userService;
+	private PersonasService personasService;
 
 	@RequestMapping("/")
-	public ModelAndView handleRequest() throws Exception {
-		List<Empleados> listEmpleados = userService.list();
-		ModelAndView model = new ModelAndView("UserList");
-		model.addObject("userList", listEmpleados);
+	public ModelAndView handleRequest()throws Exception {
+		
+		System.out.println("-- dentro de controller");
+		
+		
+		/*DE MOMENTO NO SE PUEDE HACER
+		 * 
+		 * 
+		
+		*/
+		List<Personas> listPersonas = personasService.list();
+		Iterator iterator = listPersonas.iterator();
+		while(iterator.hasNext()) {
+		    Personas next = (Personas) iterator.next();
+		    Empleados emple =next.getEmpleados();
+		    System.out.println("Nombre persona: " +next.getNombre()+" Empleado CODIGO: " +emple.getCodEmpleado());
+		    
+		}
+		
+		ModelAndView model = new ModelAndView("indexx");
+		model.addObject("userList", listPersonas);
+		model.addObject("hola","Q pasa tio");		
 		return model;
 	}
-	
+	/*
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
 		ModelAndView model = new ModelAndView("UserForm");
@@ -62,5 +82,5 @@ public class HomeController {
 		userService.saveOrUpdate(empleado);
 		return new ModelAndView("redirect:/");
 	}
-	
+	*/
 }
