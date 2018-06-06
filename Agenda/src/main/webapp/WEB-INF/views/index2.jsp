@@ -48,44 +48,8 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="container">
-			<nav
-				class="navbar navbar-default navbar-fixed-top effect-main past-main">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header page-scroll">
-						<button type="button" class="navbar-toggle collapsed"
-							data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
-						<h1>Agenda</h1> 
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="navbar-collapse navbar-right collapse"
-						id="bs-example-navbar-collapse-1" aria-expanded="false"
-						style="height: 0px;">
-						<ul class="nav navbar-nav">
-							<li><a class="page-scroll"
-								href="http://designstub.com/demos/iland/#main">Product</a></li>
-							<li><a class="page-scroll"
-								href="http://designstub.com/demos/iland/#features">Features</a></li>
-							<li><a class="page-scroll"
-								href="http://designstub.com/demos/iland/#review-section">Reviews</a></li>
-							<li><a class="page-scroll"
-								href="http://designstub.com/demos/iland/#pricing">Pricing</a></li>
-							<li><a class="page-scroll"
-								href="http://designstub.com/demos/iland/#contact">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			<!-- /.navbar-collapse -->
-		</div>
+	
 		<!-- /.container-fluid -->
-		<h1>${hola}</h1>
 		<div class="main app form" id="main">
 			<!-- Main Section-->
 			<div class="hero-section">
@@ -137,7 +101,7 @@
 				</div>
 			</div>
 			<div class="app-features text-center" id="features">
-				<div class="container">
+				<div align="center" class="centro">
 					<h1 class="wow fadeInDown" data-wow-delay="0.1s"
 						style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">Contactos</h1>
 					<p class="wow fadeInDown" data-wow-delay="0.2s"
@@ -182,7 +146,6 @@
 					</div>
 				</div>
 			</div>
-
 
 
 
