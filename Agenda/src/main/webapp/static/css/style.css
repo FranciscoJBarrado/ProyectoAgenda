@@ -2251,6 +2251,10 @@ padding: 120px 10px 50px 350px;
  	 margin-top: 15px;
   }
   .centro{
+ 
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+
   aling-items: center}
 
  .back-to-top {
