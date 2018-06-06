@@ -1,12 +1,18 @@
 package com.springmvc.model;
-// Generated 05-jun-2018 16:29:52 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 17:10:43 by Hibernate Tools 5.2.3.Final
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,11 +25,12 @@ import javax.persistence.TemporalType;
 public class Empleados implements java.io.Serializable {
 
 	private Integer idempleados;
+	private Categorias categorias;
+	private Departamentos departamentos;
 	private String codEmpleado;
 	private String salario;
 	private Date fechaAlta;
-	private Integer idDepartamento;
-	private Integer idCategoria;
+	
 
 	public Empleados() {
 	}
@@ -32,12 +39,14 @@ public class Empleados implements java.io.Serializable {
 		this.codEmpleado = codEmpleado;
 	}
 
-	public Empleados(String codEmpleado, String salario, Date fechaAlta, Integer idDepartamento, Integer idCategoria) {
+	public Empleados(Categorias categorias, Departamentos departamentos, String codEmpleado, String salario,
+			Date fechaAlta, Set<Personas> personases) {
+		this.categorias = categorias;
+		this.departamentos = departamentos;
 		this.codEmpleado = codEmpleado;
 		this.salario = salario;
 		this.fechaAlta = fechaAlta;
-		this.idDepartamento = idDepartamento;
-		this.idCategoria = idCategoria;
+
 	}
 
 	@Id
@@ -50,6 +59,26 @@ public class Empleados implements java.io.Serializable {
 
 	public void setIdempleados(Integer idempleados) {
 		this.idempleados = idempleados;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "idCategoria")
+	public Categorias getCategorias() {
+		return this.categorias;
+	}
+
+	public void setCategorias(Categorias categorias) {
+		this.categorias = categorias;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "idDepartamento")
+	public Departamentos getDepartamentos() {
+		return this.departamentos;
+	}
+
+	public void setDepartamentos(Departamentos departamentos) {
+		this.departamentos = departamentos;
 	}
 
 	@Column(name = "codEmpleado", nullable = false, length = 45)
@@ -80,22 +109,6 @@ public class Empleados implements java.io.Serializable {
 		this.fechaAlta = fechaAlta;
 	}
 
-	@Column(name = "idDepartamento")
-	public Integer getIdDepartamento() {
-		return this.idDepartamento;
-	}
 
-	public void setIdDepartamento(Integer idDepartamento) {
-		this.idDepartamento = idDepartamento;
-	}
-
-	@Column(name = "idCategoria")
-	public Integer getIdCategoria() {
-		return this.idCategoria;
-	}
-
-	public void setIdCategoria(Integer idCategoria) {
-		this.idCategoria = idCategoria;
-	}
 
 }

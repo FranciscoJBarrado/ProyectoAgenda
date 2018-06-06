@@ -1,6 +1,7 @@
 package com.springmvc.controller;
 
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,14 @@ public class HomeController {
 		
 		*/
 		List<Personas> listPersonas = personasService.list();
+		Iterator iterator = listPersonas.iterator();
+		while(iterator.hasNext()) {
+		    Personas next = (Personas) iterator.next();
+		    Empleados emple =next.getEmpleados();
+		    System.out.println("Nombre persona: " +next.getNombre()+" Empleado CODIGO: " +emple.getCodEmpleado());
+		    
+		}
+		
 		ModelAndView model = new ModelAndView("indexx");
 		model.addObject("userList", listPersonas);
 		model.addObject("hola","Q pasa tio");		

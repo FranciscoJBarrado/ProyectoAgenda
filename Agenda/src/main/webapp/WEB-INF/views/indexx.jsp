@@ -19,6 +19,13 @@
 			<th>Apellido</th>
 			<th>Apellido</th>
 			<th>DNI</th>
+			<th>idEmpleado</th>
+			<th>CODEmpleado</th>
+			<th>Salario</th>
+			<th>FechaAlta</th>
+			<th>Departamento</th>
+			<th>Nombre Departamento</th>
+			
 		
 			</tr>
 	<c:forEach var="user" items="${userList}" varStatus="status">
@@ -28,7 +35,13 @@
 					<td>${user.apellido1}</td>
 					<td>${user.apellido2}</td>
 					<td>${user.dni}</td>
-				
+					<td>${user.empleados.idempleados}</td>
+					<td>${user.empleados.codEmpleado}</td>
+					<td>${user.empleados.salario}</td>
+					<td>${user.empleados.fechaAlta}</td>
+					<td>${user.empleados.departamentos.iddepartamento}</td>
+					<td>${user.empleados.departamentos.nombre}</td>
+					
 					
 					
 					</td>
