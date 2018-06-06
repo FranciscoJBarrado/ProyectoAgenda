@@ -48,7 +48,7 @@ public class HomeController {
 		    
 		}
 		
-		ModelAndView model = new ModelAndView("indexx");
+		ModelAndView model = new ModelAndView("index2");
 		model.addObject("userList", listPersonas);
 		model.addObject("hola",listPersonas);		
 		return model;

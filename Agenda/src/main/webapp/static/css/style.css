@@ -2250,6 +2250,12 @@ padding: 120px 10px 50px 350px;
     border-radius: 0 5px 5px 0;
  	 margin-top: 15px;
   }
+  .centro{
+ 
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+
+  aling-items: center}
 
  .back-to-top {
 	right: 10px;
