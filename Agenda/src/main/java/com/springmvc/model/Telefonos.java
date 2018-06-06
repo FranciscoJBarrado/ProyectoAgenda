@@ -1,11 +1,14 @@
 package com.springmvc.model;
-// Generated 05-jun-2018 16:29:52 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 17:10:43 by Hibernate Tools 5.2.3.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -16,15 +19,15 @@ import javax.persistence.Table;
 public class Telefonos implements java.io.Serializable {
 
 	private Integer idtelefonos;
+	private Personas personas;
 	private String telefono;
-	private Integer idPersona;
 
 	public Telefonos() {
 	}
 
-	public Telefonos(String telefono, Integer idPersona) {
+	public Telefonos(Personas personas, String telefono) {
+		this.personas = personas;
 		this.telefono = telefono;
-		this.idPersona = idPersona;
 	}
 
 	@Id
@@ -39,6 +42,16 @@ public class Telefonos implements java.io.Serializable {
 		this.idtelefonos = idtelefonos;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idPersona")
+	public Personas getPersonas() {
+		return this.personas;
+	}
+
+	public void setPersonas(Personas personas) {
+		this.personas = personas;
+	}
+
 	@Column(name = "telefono", length = 45)
 	public String getTelefono() {
 		return this.telefono;
@@ -46,15 +59,6 @@ public class Telefonos implements java.io.Serializable {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-
-	@Column(name = "idPersona")
-	public Integer getIdPersona() {
-		return this.idPersona;
-	}
-
-	public void setIdPersona(Integer idPersona) {
-		this.idPersona = idPersona;
 	}
 
 }
