@@ -60,5 +60,9 @@ public class PersonasDAOImpl implements PersonasDAO {
 		sessionFactory.getCurrentSession().delete(personaToDelete);
 		
 	}
+	public int sumados()
+	{
+		return 2;
+	}
 	
 }

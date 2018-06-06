@@ -1,7 +1,5 @@
 package com.springmvc.model;
-
-
-// Generated 04-jun-2018 14:51:39 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 17:10:43 by Hibernate Tools 5.2.3.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -32,7 +30,7 @@ public class Empleados implements java.io.Serializable {
 	private String codEmpleado;
 	private String salario;
 	private Date fechaAlta;
-	private Set<Personas> personases = new HashSet<Personas>(0);
+	
 
 	public Empleados() {
 	}
@@ -48,7 +46,7 @@ public class Empleados implements java.io.Serializable {
 		this.codEmpleado = codEmpleado;
 		this.salario = salario;
 		this.fechaAlta = fechaAlta;
-		this.personases = personases;
+
 	}
 
 	@Id
@@ -63,7 +61,7 @@ public class Empleados implements java.io.Serializable {
 		this.idempleados = idempleados;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idCategoria")
 	public Categorias getCategorias() {
 		return this.categorias;
@@ -73,7 +71,7 @@ public class Empleados implements java.io.Serializable {
 		this.categorias = categorias;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idDepartamento")
 	public Departamentos getDepartamentos() {
 		return this.departamentos;
@@ -111,13 +109,6 @@ public class Empleados implements java.io.Serializable {
 		this.fechaAlta = fechaAlta;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empleados")
-	public Set<Personas> getPersonases() {
-		return this.personases;
-	}
 
-	public void setPersonases(Set<Personas> personases) {
-		this.personases = personases;
-	}
 
 }

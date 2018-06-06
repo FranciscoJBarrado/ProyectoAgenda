@@ -1,7 +1,5 @@
 package com.springmvc.model;
-
-
-// Generated 04-jun-2018 14:51:39 by Hibernate Tools 5.2.3.Final
+// Generated 05-jun-2018 17:10:43 by Hibernate Tools 5.2.3.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
