@@ -118,15 +118,35 @@
 
 							<div class="col-md-8 col-md-offset-2 features-centre">
 
-								<table border="1">
+								<table border="1" class="centro">
 									<tbody>
 										<tr>
 											<th><h3 class="h3">
-													<strong>Nombre</strong>
+													<strong>NOMBRE&nbsp;</strong>
 												</h3></th>
-											<th><h3 class="h3">
-													<strong>Apellidos</strong>
+												<th><h3 class="h3">
+													<strong> Y APELLIDOS&nbsp;&nbsp;</strong>
+												</h3></th>											
+
+												<th><h3 class="h3">
+													<strong>DNI&nbsp;&nbsp;</strong>
 												</h3></th>
+												<th><h3 class="h3">
+													<strong> COD&nbsp;&nbsp;</strong>
+												</h3></th>
+														<th><h3 class="h3">
+													<strong> SALARIO&nbsp;&nbsp;</strong>
+												</h3></th>													<th><h3 class="h3">
+													<strong> ALTA&nbsp;&nbsp;</strong>
+												</h3></th>		
+												
+														<th><h3 class="h3">
+													<strong> ID DEP&nbsp;&nbsp;</strong>
+												</h3></th>													<th><h3 class="h3">
+													<strong>NOMBRE DEP  </strong>
+												</h3></th>													
+												
+												
 										</tr>
 
 										<c:forEach var="user" items="${userList}" varStatus="status">
@@ -134,8 +154,17 @@
 
 										<tr>
 											<td><a class="linker" href="edit?id=${user.idpersonas}">${user.nombre}</a></td>
-											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.apellido1}</a></td>
-											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.apellido2}</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.apellido1} &nbsp;${user.apellido2}</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.dni}&nbsp;&nbsp;</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.empleados.codEmpleado}&nbsp;&nbsp;</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.empleados.salario}&nbsp;&nbsp;</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.empleados.fechaAlta}&nbsp;&nbsp;</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.empleados.departamentos.iddepartamento}&nbsp;&nbsp;</a></td>
+											<td>&nbsp;<a class="linker" href="edit?id=${user.idpersonas}">${user.empleados.departamentos.nombre}&nbsp;&nbsp;</a></td>
+										
+				
+											
+											
 										</tr>
 										</c:forEach>
 
