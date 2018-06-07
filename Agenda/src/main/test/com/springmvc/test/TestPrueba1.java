@@ -2,6 +2,7 @@ package com.springmvc.test;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,6 +12,7 @@ import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
 
 import com.springmvc.config.ApplicationContextConfig;
+import com.springmvc.controller.HomeController;
 import com.springmvc.dao.PersonasDAO;
 import com.springmvc.dao.PersonasDAOImpl;
 
@@ -24,6 +26,8 @@ public class TestPrueba1
 	
 	@Autowired
 	private PersonasDAO personasDAO;
+	@Autowired
+	private HomeController controller;
 	
 	@Test
 	public void testPrueba(){		
@@ -33,5 +37,11 @@ public class TestPrueba1
 	public void testPruebaDos()
 	{
 		assertNull(personasDAO.get(4));
+		
+	}
+	@Test
+	public void testPruebaTres()throws Exception
+	{
+		assertNotNull(controller);
 	}
 }
