@@ -59,16 +59,16 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("UserForm");
 		model.addObject("user", new Empleados());
 		return model;		
-	}
+	}*/
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView editUser(HttpServletRequest request) {
 		int userId = Integer.parseInt(request.getParameter("id"));
-		Empleados empleado = userService.get(userId);
-		ModelAndView model = new ModelAndView("UserForm");
-		model.addObject("user", empleado);
+		Personas persona = personasService.get(userId);
+		ModelAndView model = new ModelAndView("indexx2");
+		model.addObject("user", persona);
 		return model;		
-	}
+	}/*
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public ModelAndView deleteUser(HttpServletRequest request) {
