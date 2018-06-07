@@ -50,6 +50,11 @@ public class TestPrueba1
 	{
 		assertNotNull(controller);
 	}
+	@Test
+	public void testPruebaCuatro()
+	{
+		assertEquals(personasDAO.get(1).getIdpersonas(),personasDAO.get(1).getEmpleados().getIdempleados());
+	}
 	/*
 	@Test
 	public void testMocazo() throws Exception
