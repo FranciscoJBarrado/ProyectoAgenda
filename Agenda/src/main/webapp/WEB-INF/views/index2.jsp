@@ -96,8 +96,14 @@
 						style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
 						Listado de contactos<br class="hidden-xs">
 					</p>
+					<div>
 
-
+						<form:form method="post" action="buscar" modelAttribute="buscar">
+						<a class="enlaceboton" href="crear">&nbsp;Crear&nbsp;</a>
+						<input type="text" class="enlaceboton" name="buscar"/>
+						<input type="submit" class="enlaceboton" value="Buscar">
+						</form:form>
+					</div>
 					<div class="col-md-6 col-md-offset-3 features-left">
 
 
@@ -136,7 +142,7 @@
 												
 												
 										</tr>
-
+										<tr><td></td></tr>
 										<c:forEach var="user" items="${userList}" varStatus="status">
 
 

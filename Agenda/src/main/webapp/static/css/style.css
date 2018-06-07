@@ -2279,3 +2279,13 @@ padding: 120px 10px 50px 350px;
 /*---------------------------------------------------
 ------- Media Queries for Split Layout Ends ---------
 ---------------------------------------------------*/
+.enlaceboton {    font-family: verdana, arial, sans-serif; 
+   font-size: 10pt; 
+   font-weight: bold; 
+   padding: 4px; 
+   background-color:   #f2f2f2; 
+   color: #666666; 
+   text-decoration: none; 
+    border: 1px solid black; 
+
+
