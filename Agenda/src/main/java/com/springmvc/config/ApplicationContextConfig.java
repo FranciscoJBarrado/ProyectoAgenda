@@ -29,7 +29,7 @@ import com.springmvc.model.Telefonos;
 @Configuration
 //@ComponentScan("com.springmvc")
 @EnableTransactionManagement
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan(basePackages = "com.springmvc")
 
 public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
