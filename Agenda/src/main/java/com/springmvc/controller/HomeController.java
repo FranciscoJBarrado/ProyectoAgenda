@@ -61,6 +61,7 @@ public class HomeController {
 		return model;
 	}
 	
+<<<<<<< HEAD
 	
 	/*
 	 * @RequestMapping(value = "/new", method = RequestMethod.GET) public
@@ -68,6 +69,13 @@ public class HomeController {
 	 * ModelAndView("UserForm"); model.addObject("user", new Empleados());
 	 * return model; }
 	 */
+=======
+	 @RequestMapping(value = "/new", method = RequestMethod.GET) public
+	  ModelAndView newUser() { ModelAndView model = new
+	  ModelAndView("UserForm2"); model.addObject("user", new Personas());
+	  return model; }
+	 
+>>>>>>> master
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView editUser(HttpServletRequest request) {
