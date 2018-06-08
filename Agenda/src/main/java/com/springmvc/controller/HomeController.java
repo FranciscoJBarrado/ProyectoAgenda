@@ -1,6 +1,5 @@
 package com.springmvc.controller;
 
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,70 +16,75 @@ import com.springmvc.model.Empleados;
 import com.springmvc.model.Personas;
 import com.springmvc.services.PersonasService;
 
-
-
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private PersonasService personasService;
-
+	
+	@RequestMapping("/ret")
+	public ModelAndView ret() throws Exception{
+		
+			return handleRequest();
+		
+	}
+	
 	@RequestMapping("/")
-	public ModelAndView handleRequest()throws Exception {
-		
+	public ModelAndView handleRequest() throws Exception {
+
 		System.out.println("-- dentro de controller");
-		
-		
-		/*DE MOMENTO NO SE PUEDE HACER
+
+		/*
+		 * DE MOMENTO NO SE PUEDE HACER
 		 * 
 		 * 
-		
-		*/
+		 * 
+		 */
 		List<Personas> listPersonas = personasService.list();
 		Iterator iterator = listPersonas.iterator();
-		while(iterator.hasNext()) {
-		    Personas next = (Personas) iterator.next();
-		    Empleados emple =next.getEmpleados();
-		    System.out.println("Nombre persona: " +next.getNombre()+" Empleado CODIGO: " +emple.getCodEmpleado());
-		    
+		while (iterator.hasNext()) {
+			Personas next = (Personas) iterator.next();
+			Empleados emple = next.getEmpleados();
+			System.out.println("Nombre persona: " + next.getNombre() + " Empleado CODIGO: " + emple.getCodEmpleado());
+
 		}
-		
+
 		ModelAndView model = new ModelAndView("index2");
 		model.addObject("userList", listPersonas);
-		model.addObject("hola","Q pasa tio");		
+		model.addObject("hola", "Q pasa tio");
 		return model;
 	}
 	/*
-	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public ModelAndView newUser() {
-		ModelAndView model = new ModelAndView("UserForm");
-		model.addObject("user", new Empleados());
-		return model;		
-	}*/
-	
+	 * @RequestMapping(value = "/new", method = RequestMethod.GET) public
+	 * ModelAndView newUser() { ModelAndView model = new
+	 * ModelAndView("UserForm"); model.addObject("user", new Empleados());
+	 * return model; }
+	 */
+
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView editUser(HttpServletRequest request) {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		Personas persona = personasService.get(userId);
-		ModelAndView model = new ModelAndView("indexx2");
+		ModelAndView model = new ModelAndView("UserForm");
 		model.addObject("user", persona);
-		return model;		
-	}/*
-	
+		return model;
+	}
+
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public ModelAndView deleteUser(HttpServletRequest request) {
 		int userId = Integer.parseInt(request.getParameter("id"));
-		userService.delete(userId);
-		return new ModelAndView("redirect:/");		
-	}
-	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public ModelAndView saveUser(@ModelAttribute Empleados empleado) {
-		userService.saveOrUpdate(empleado);
+		personasService.delete(userId);
 		return new ModelAndView("redirect:/");
 	}
-	*/
+	
+	
+	
+	 @RequestMapping(value = "/save", method = RequestMethod.POST) public
+	 ModelAndView saveUser(@ModelAttribute Personas persona) {
+	 personasService.saveOrUpdate(persona); return new
+	 ModelAndView("redirect:/"); }
+	 
 }

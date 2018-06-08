@@ -9,28 +9,27 @@ import org.springframework.stereotype.Service;
 
 import com.springmvc.dao.PersonasDAO;
 import com.springmvc.model.Personas;
+
 @Service
 @Transactional
-public class PersonasServiceImpl implements PersonasService
-{
+public class PersonasServiceImpl implements PersonasService {
 
 	@Autowired
 	private PersonasDAO personasDAO;
-	
-	public PersonasServiceImpl(){}
-	
-	public PersonasServiceImpl(PersonasDAO personasDAO)
-	{
+
+	public PersonasServiceImpl() {
+	}
+
+	public PersonasServiceImpl(PersonasDAO personasDAO) {
 		super();
 		this.personasDAO = personasDAO;
 	}
-	
+
 	@Override
-	public List<Personas> list()
-	{
+	public List<Personas> list() {
 		return personasDAO.list();
 	}
-	
+
 	@Override
 	public Personas get(int id) {
 		return personasDAO.get(id);
@@ -41,10 +40,11 @@ public class PersonasServiceImpl implements PersonasService
 		personasDAO.saveOrUpdate(persona);
 
 	}
+
 	@Override
 	public void delete(int id) {
 		personasDAO.delete(id);
 
 	}
-	
+
 }
