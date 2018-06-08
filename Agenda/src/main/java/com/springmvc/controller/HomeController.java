@@ -54,20 +54,14 @@ public class HomeController {
 
 		ModelAndView model = new ModelAndView("index2");
 		model.addObject("userList", listPersonas);
-<<<<<<< HEAD
-		model.addObject("hola",listPersonas);		
-=======
+		model.addObject("hola",listPersonas);	
+
+
 		model.addObject("hola", "Q pasa tio");
->>>>>>> master
 		return model;
 	}
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public ModelAndView deletePersonas(HttpServletRequest request) {
-		int personasId = Integer.parseInt(request.getParameter("id"));
-		PersonasService.delete(personasId);
-		return new ModelAndView("redirect:/");		
-	}
+	
 	/*
 	 * @RequestMapping(value = "/new", method = RequestMethod.GET) public
 	 * ModelAndView newUser() { ModelAndView model = new
