@@ -57,12 +57,12 @@ public class HomeController {
 		model.addObject("hola", "Q pasa tio");
 		return model;
 	}
-	/*
-	 * @RequestMapping(value = "/new", method = RequestMethod.GET) public
-	 * ModelAndView newUser() { ModelAndView model = new
-	 * ModelAndView("UserForm"); model.addObject("user", new Empleados());
-	 * return model; }
-	 */
+	
+	 @RequestMapping(value = "/new", method = RequestMethod.GET) public
+	  ModelAndView newUser() { ModelAndView model = new
+	  ModelAndView("UserForm2"); model.addObject("user", new Personas());
+	  return model; }
+	 
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView editUser(HttpServletRequest request) {
