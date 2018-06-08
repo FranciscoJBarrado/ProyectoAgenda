@@ -16,7 +16,6 @@ import com.mysql.jdbc.log.Log;
 import com.mysql.jdbc.log.LogFactory;
 import com.springmvc.model.Personas;
 
-
 @Repository
 public class PersonasDAOImpl implements PersonasDAO {
 	
@@ -24,42 +23,39 @@ public class PersonasDAOImpl implements PersonasDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	
+
 	@Override
-	@Transactional //Transaccion, o muestra todo o ninguno
+	@Transactional // Transaccion, o muestra todo o ninguno
 	public List<Personas> list() {
 		@SuppressWarnings("unchecked")
-		List<Personas> listPersonas = (List<Personas>) sessionFactory.getCurrentSession()
-				.createCriteria(Personas.class)
+		List<Personas> listPersonas = (List<Personas>) sessionFactory.getCurrentSession().createCriteria(Personas.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		
 
 
 		return listPersonas;
 	}
-	
+
 	@Override
 	@Transactional
 	public Personas get(int id) {
 		String hql = "from Personas where id=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		
+
 		@SuppressWarnings("unchecked")
 		List<Personas> listPersonas = (List<Personas>) query.list();
-		
+
 		if (listPersonas != null && !listPersonas.isEmpty()) {
 			return listPersonas.get(0);
 		}
-		
+
 		return null;
 	}
-
 
 	@Override
 	public void saveOrUpdate(Personas personas) {
 		sessionFactory.getCurrentSession().saveOrUpdate(personas);
-		
+
 	}
 
 	@Override
@@ -67,11 +63,11 @@ public class PersonasDAOImpl implements PersonasDAO {
 		Personas personaToDelete = new Personas();
 		personaToDelete.setIdpersonas(id);
 		sessionFactory.getCurrentSession().delete(personaToDelete);
-		
+
 	}
-	public int sumados()
-	{
+
+	public int sumados() {
 		return 2;
 	}
-	
+
 }

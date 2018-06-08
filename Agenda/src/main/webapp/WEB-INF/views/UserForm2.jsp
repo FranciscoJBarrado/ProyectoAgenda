@@ -92,7 +92,7 @@
 				<div class="app-features text-center" id="features">
 					<div align="center" class="centro">
 						<h1 class="wow fadeInDown" data-wow-delay="0.1s"
-							style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">Contactos</h1>
+							style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">Modificar</h1>
 						<p class="wow fadeInDown" data-wow-delay="0.2s"
 							style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
 							Listado de contactos<br class="hidden-xs">
@@ -100,9 +100,9 @@
 						<div>
 
 							<form:form method="post" action="buscar" modelAttribute="buscar">
-								<a class="enlaceboton" href="crear">&nbsp;Crear&nbsp;</a>
-								<input type="text" class="enlaceboton" name="buscar" />
-								<input type="submit" class="enlaceboton" value="Buscar">
+
+								<a class="enlaceboton" href="ret">&nbsp;Volver&nbsp;</a>
+
 							</form:form>
 						</div>
 						<div class="col-md-6 col-md-offset-3 features-left">
@@ -113,71 +113,32 @@
 
 								<div class="col-md-8 col-md-offset-2 features-centre">
 
-									<table border="1" class="centro">
-										<tbody>
-											<tr>
-												<th><h3 class="h3">
-														<strong>NOMBRE&nbsp;</strong>
-													</h3></th>
-												<th><h3 class="h3">
-														<strong> Y APELLIDOS&nbsp;&nbsp;</strong>
-													</h3></th>
+								
+<form:form method="post"  action="save" commandName="user" class="form-horizontal">
 
-												<th><h3 class="h3">
-														<strong>DNI&nbsp;&nbsp;</strong>
-													</h3></th>
-												<th><h3 class="h3">
-														<strong> COD&nbsp;&nbsp;</strong>
-													</h3></th>
-												<th><h3 class="h3">
-														<strong> SALARIO&nbsp;&nbsp;</strong>
-													</h3></th>
-												<th><h3 class="h3">
-														<strong> ALTA&nbsp;&nbsp;</strong>
-													</h3></th>
-
-												<th><h3 class="h3">
-														<strong> ID DEP&nbsp;&nbsp;</strong>
-													</h3></th>
-												<th><h3 class="h3">
-														<strong>NOMBRE DEP </strong>
-													</h3></th>
+<table>
+<tr><td><input type="label" value="ID"/></td></tr>
 
 
-											</tr>
-											<tr>
-												<td></td>
-											</tr>
-											<c:forEach var="user" items="${userList}" varStatus="status">
+<td><form:input type="text"  path="idpersonas" name="id" placeholder="${user.idpersonas}"/></td></tr>
+<tr><td><form:errors path="idpersonas"/><td><tr>
+<tr><td><input type="label" value="Nombre"/><td><tr>
+<tr><td><form:input type="text" name="nombre" placeholder="${user.nombre}" path="nombre"/></td></tr>
+<tr><td><form:errors path="nombre"/>
 
+<tr><td><input type="label" value="Apellido 1"/></tr></tr>
+<tr><td><form:input type="text" name="apellido1" placeholder="${user.apellido1}" path="apellido1"/></td></tr>
 
-												<tr>
-													<td><a class="linker"
-														href="edit?id=${user.idpersonas}">${user.nombre}</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.apellido1}
-															&nbsp;${user.apellido2}</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.dni}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.codEmpleado}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.salario}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.fechaAlta}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.departamentos.iddepartamento}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.departamentos.nombre}&nbsp;&nbsp;</a></td>
+<tr><td><input type="label" value="Apellido 2"/></td></tr>
+<tr><td><form:input type="text" name="apellido2" placeholder="${user.apellido2}" path="apellido2"/></td></tr>
 
+<tr><td><input type="label" value="D.N.I."/></td></tr>
+<tr><td><form:input type="text" name="dni" placeholder="${user.dni}" path="dni"/></td></tr>
+ 
+<tr><td><input type="submit" value="Guardar"></td></tr>
 
-
-
-												</tr>
-											</c:forEach>
-
-										</tbody>
-									</table>
+</table>
+</form:form>
 								</div>
 							</div>
 						</div>

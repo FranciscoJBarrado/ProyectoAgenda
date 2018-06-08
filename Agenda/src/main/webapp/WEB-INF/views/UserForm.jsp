@@ -100,9 +100,10 @@
 						<div>
 
 							<form:form method="post" action="buscar" modelAttribute="buscar">
-								<a class="enlaceboton" href="crear">&nbsp;Crear&nbsp;</a>
-								<input type="text" class="enlaceboton" name="buscar" />
-								<input type="submit" class="enlaceboton" value="Buscar">
+								<a class="enlaceboton" href="delete?id=${user.idpersonas }">&nbsp;Eliminar&nbsp;</a>&nbsp;
+								<a class="enlaceboton" href="edit2?id=${user.idpersonas }">&nbsp;Modificar&nbsp;</a>&nbsp;
+								<a class="enlaceboton" href="ret">&nbsp;Volver&nbsp;</a>
+
 							</form:form>
 						</div>
 						<div class="col-md-6 col-md-offset-3 features-left">
@@ -148,33 +149,29 @@
 											<tr>
 												<td></td>
 											</tr>
-											<c:forEach var="user" items="${userList}" varStatus="status">
 
-
-												<tr>
-													<td><a class="linker"
-														href="edit?id=${user.idpersonas}">${user.nombre}</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.apellido1}
-															&nbsp;${user.apellido2}</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.dni}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.codEmpleado}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.salario}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.fechaAlta}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.departamentos.iddepartamento}&nbsp;&nbsp;</a></td>
-													<td>&nbsp;<a class="linker"
-														href="edit?id=${user.idpersonas}">${user.empleados.departamentos.nombre}&nbsp;&nbsp;</a></td>
+											<tr>
+												<td><a class="linker" href="edit?id=${user.idpersonas}">${user.nombre}</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.apellido1}
+														&nbsp;${user.apellido2}</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.dni}&nbsp;&nbsp;</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.empleados.codEmpleado}&nbsp;&nbsp;</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.empleados.salario}&nbsp;&nbsp;</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.empleados.fechaAlta}&nbsp;&nbsp;</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.empleados.departamentos.iddepartamento}&nbsp;&nbsp;</a></td>
+												<td>&nbsp;<a class="linker"
+													href="edit?id=${user.idpersonas}">${user.empleados.departamentos.nombre}&nbsp;&nbsp;</a></td>
 
 
 
 
-												</tr>
-											</c:forEach>
+											</tr>
 
 										</tbody>
 									</table>
