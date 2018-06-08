@@ -13,4 +13,5 @@ public List<Personas> list();
 	public void saveOrUpdate(Personas persona);
 	
 	public void delete(int id);
+	
 }

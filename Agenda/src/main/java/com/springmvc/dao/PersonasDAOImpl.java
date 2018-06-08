@@ -3,17 +3,24 @@ package com.springmvc.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.apache.log4j.Logger;
+import org.apache.commons.logging.*;
+import org.apache.commons.logging.impl.LogFactoryImpl;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mysql.jdbc.log.Log;
+import com.mysql.jdbc.log.LogFactory;
 import com.springmvc.model.Personas;
 
 
 @Repository
 public class PersonasDAOImpl implements PersonasDAO {
+	
+
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -26,6 +33,8 @@ public class PersonasDAOImpl implements PersonasDAO {
 		List<Personas> listPersonas = (List<Personas>) sessionFactory.getCurrentSession()
 				.createCriteria(Personas.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		
+
 
 		return listPersonas;
 	}

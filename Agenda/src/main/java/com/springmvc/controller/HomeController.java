@@ -53,6 +53,13 @@ public class HomeController {
 		model.addObject("hola",listPersonas);		
 		return model;
 	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public ModelAndView deletePersonas(HttpServletRequest request) {
+		int personasId = Integer.parseInt(request.getParameter("id"));
+		PersonasService.delete(personasId);
+		return new ModelAndView("redirect:/");		
+	}
 	/*
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
