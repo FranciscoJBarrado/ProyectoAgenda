@@ -20,46 +20,45 @@ import com.springmvc.controller.HomeController;
 import com.springmvc.dao.PersonasDAO;
 import com.springmvc.dao.PersonasDAOImpl;
 
-@ContextConfiguration(classes = {ApplicationContextConfig.class})
-public class TestPrueba1 
-{
-	@ClassRule 
-	public static final SpringClassRule SPRING_CLASS_RULE = new SpringClassRule();	
+@ContextConfiguration(classes = { ApplicationContextConfig.class })
+public class TestPrueba1 {
+	@ClassRule
+	public static final SpringClassRule SPRING_CLASS_RULE = new SpringClassRule();
 	@Rule
-    public final SpringMethodRule springMethodRule = new SpringMethodRule();
-	
+	public final SpringMethodRule springMethodRule = new SpringMethodRule();
+
 	@Autowired
 	private PersonasDAO personasDAO;
 	@Autowired
 	private HomeController controller;
-/*	@Autowired
-	private MockMvc mockMvc;
-	*/
+
+	/*
+	 * @Autowired private MockMvc mockMvc;
+	 */
 	@Test
-	public void testPrueba(){		
-		assertEquals(2,personasDAO.sumados());		
+	public void testPrueba() {
+		assertEquals(2, personasDAO.sumados());
 	}
+
 	@Test
-	public void testPruebaDos()
-	{
+	public void testPruebaDos() {
 		assertNull(personasDAO.get(4));
-		
+
 	}
+
 	@Test
-	public void testPruebaTres()throws Exception
-	{
+	public void testPruebaTres() throws Exception {
 		assertNotNull(controller);
 	}
+
 	@Test
-	public void testPruebaCuatro()
-	{
-		assertEquals(personasDAO.get(1).getIdpersonas(),personasDAO.get(1).getEmpleados().getIdempleados());
+	public void testPruebaCuatro() {
+		assertEquals(personasDAO.get(1).getIdpersonas(), personasDAO.get(1).getEmpleados().getIdempleados());
 	}
 	/*
-	@Test
-	public void testMocazo() throws Exception
-	{
-		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk());
-   
-	}*/
+	 * @Test public void testMocazo() throws Exception {
+	 * this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk());
+	 * 
+	 * }
+	 */
 }

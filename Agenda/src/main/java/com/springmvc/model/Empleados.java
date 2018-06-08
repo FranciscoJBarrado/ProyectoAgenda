@@ -30,7 +30,6 @@ public class Empleados implements java.io.Serializable {
 	private String codEmpleado;
 	private String salario;
 	private Date fechaAlta;
-	
 
 	public Empleados() {
 	}
@@ -108,7 +107,5 @@ public class Empleados implements java.io.Serializable {
 	public void setFechaAlta(Date fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
-
-
 
 }

@@ -47,6 +47,7 @@
 					
 					</td>
 				</tr>
-			</table>
+			</table><a class="enlaceboton" href="delete">&nbsp;Eliminar&nbsp;</a>
+			
 </body>
 </html>
