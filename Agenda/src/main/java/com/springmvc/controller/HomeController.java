@@ -72,6 +72,14 @@ public class HomeController {
 		model.addObject("user", persona);
 		return model;
 	}
+	@RequestMapping(value = "/edit2", method = RequestMethod.GET)
+	public ModelAndView editUser2(HttpServletRequest request) {
+		int userId = Integer.parseInt(request.getParameter("id"));
+		Personas persona = personasService.get(userId);
+		ModelAndView model = new ModelAndView("UserForm2");
+		model.addObject("user", persona);
+		return model;
+	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public ModelAndView deleteUser(HttpServletRequest request) {
