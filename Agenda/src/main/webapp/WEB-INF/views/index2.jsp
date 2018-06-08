@@ -232,29 +232,29 @@
 
 	<spring:url value="/static/js/jquery-2.1.1.js" var="jquery" />
 	<script type="text/javascript" src="${jquery}"></script>
-	/>
+	
 
 	<spring:url value="/static/js/bootstrap.min.js" var="js2" />
 	<script type="text/javascript" src="${js2}"></script>
-	/>
+	
 
 	<spring:url value="/static/js/plugins.js" var="js3" />
 	<script type="text/javascript" src="${js3}"></script>
-	/>
+	
 
 
 	<spring:url value="/static/js//menu.js" var="js4" />
 	<script type="text/javascript" src="${js4}"></script>
-	/>
+	
 
 
 	<spring:url value="/static/js/custom.js" var="js5" />
 	<script type="text/javascript" src="${js5}"></script>
-	/>
+	
 
 	<spring:url value="/static/js/jquery.subscribe.js" var="js6" />
 	<script type="text/javascript" src="${js6}"></script>
-	/>
+	
 
 
 
