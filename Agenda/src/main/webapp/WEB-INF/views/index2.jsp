@@ -100,7 +100,7 @@
 						<div>
 
 							<form:form method="post" action="buscar" modelAttribute="buscar">
-								<a class="enlaceboton" href="crear">&nbsp;Crear&nbsp;</a>
+								<a class="enlaceboton" href="new">&nbsp;Crear&nbsp;</a>
 								<input type="text" class="enlaceboton" name="buscar" />
 								<input type="submit" class="enlaceboton" value="Buscar">
 							</form:form>
